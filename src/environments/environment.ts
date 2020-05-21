@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyCxxXQy6wivXJQO4pcFW0Wi6pIXV_bqyhU',
+    authDomain: 'flipper-front.firebaseapp.com',
+    databaseURL: 'https://flipper-front.firebaseio.com',
+    projectId: 'flipper-front',
+    storageBucket: 'flipper-front.appspot.com',
+    messagingSenderId: '910126592352'
+  }
 };
 
 /*
