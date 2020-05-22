@@ -1,0 +1,60 @@
+<div class="row">
+    <h1 class="col s12 center-align disabled-text">Register now and enter the arcade world</h1>
+</div>
+
+<div class="row">
+    <h5 class="col s12 center-align disabled-text">First, let's get your email.</h5>
+</div>
+
+<form [formGroup]="formGroup" (ngSubmit)="start()"> 
+    <div class="row">
+        <div class="col s12">
+    
+            <div class="col s4"></div>
+    
+            <div class="input-field col s4 center-align white-text">
+                <input #emailInput id="email" type="email" formControlName="email" class="invalid validate white-text" required>
+                <label for="email">Enter email here</label>
+            </div>
+    
+            <div class="col s4"></div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col s5"></div>
+        <button class="col s2 waves-effect waves-light btn center-align">Start</button>
+        <div class="col s5"></div>
+    </div>
+</form>
+
+<div class="row">
+    <div class="col s4"></div>
+
+    <div class="col s4">
+
+        <div class="row">
+            <p class="col s4">
+                <label>
+                    <input name="group1" type="radio" checked />
+                    <span class="white-text">Step 1</span>
+                </label>
+            </p>
+            <p class="col s4">
+                <label>
+                    <input name="group1" type="radio" disabled="disabled" />
+                    <span class="disabled-text">Step 2</span>
+                </label>
+            </p>
+            <p class="col s4">
+                <label>
+                    <input class="white-text" name="group1" type="radio" disabled="disabled" />
+                    <span class="disabled-text">Step 3</span>
+                </label>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="col s4"></div>
+</div>

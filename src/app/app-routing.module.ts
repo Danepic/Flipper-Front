@@ -6,8 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: 'player', component: PlayerComponent },
-  { path: 'bug', component: BugComponent }
+  { path: 'en/player', component: PlayerComponent },
+  { path: 'en/bug', component: BugComponent }
 ];
 
 @NgModule({
