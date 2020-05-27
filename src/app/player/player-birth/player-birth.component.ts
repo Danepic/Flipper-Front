@@ -52,6 +52,10 @@ export class PlayerBirthComponent implements OnInit {
       toast("Year is required!", 2000);
 
     } else {
+      if(parseInt(this.month) < 10){
+        this.month = "0" + this.month;
+      }
+
       this.playerComponent.player.birth = this.year + "-" + this.month + "-" + this.day;
       this.playerComponent.toStepTwo = false;
       this.playerComponent.toStepThree = true;

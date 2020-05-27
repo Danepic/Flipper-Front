@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PlayerComponent } from '../player.component';
 import { toast } from 'angular2-materialize';
 import { PlayerService } from '../service/player.service';
+import { ErrorHandleService } from 'src/app/error-handle/service/error-handle.service';
 
 @Component({
   selector: 'app-player-registration',
@@ -35,7 +36,7 @@ export class PlayerRegistrationComponent implements OnInit {
   formGroup: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private playerComponent: PlayerComponent,
-     private service: PlayerService) { }
+    private service: PlayerService, private errorHandleService: ErrorHandleService) { }
 
   ngOnInit(): void {
     this.initForm()
@@ -59,10 +60,10 @@ export class PlayerRegistrationComponent implements OnInit {
     this.country = this.formGroup.value.country;
 
     if (this.nicknameInput.nativeElement.className.includes("invalid")
-        || this.passwordInput.nativeElement.className.includes("invalid")
-        || this.confirmPasswordInput.nativeElement.className.includes("invalid")
-        || this.nameInput.nativeElement.className.includes("invalid")
-        || this.countryInput.nativeElement.className.includes("invalid")) {
+      || this.passwordInput.nativeElement.className.includes("invalid")
+      || this.confirmPasswordInput.nativeElement.className.includes("invalid")
+      || this.nameInput.nativeElement.className.includes("invalid")
+      || this.countryInput.nativeElement.className.includes("invalid")) {
       toast("Nickname is required!", 2000);
       toast("Password is required!", 2000);
       toast("Confirm Password is required!", 2000);
@@ -74,15 +75,17 @@ export class PlayerRegistrationComponent implements OnInit {
       if (this.password != this.confirmPassword) {
         toast("'Confirm password' must be equal password'!", 2000);
 
-      }else{
+      } else {
         this.playerComponent.player.nickname = this.nickname;
         this.playerComponent.player.pass = this.password;
         this.playerComponent.player.name = this.name;
         this.playerComponent.player.country = this.country;
 
-        this.service.save(this.playerComponent.player).subscribe(data => {
-          console.log(data);
-        });
+        this.service.save(this.playerComponent.player)
+          .subscribe(
+            data => console.log(data),
+            error => this.errorHandleService.throwToastException(error.error.message)
+          );
       }
     }
 

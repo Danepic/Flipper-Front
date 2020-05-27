@@ -1,5 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { Player } from './service/model/player.model';
+import { PlayerService } from './service/player.service';
 
 @Component({
   selector: 'app-player',
@@ -19,9 +20,11 @@ export class PlayerComponent implements OnInit {
 
   player: Player;
 
-  constructor() { }
+  constructor(private service: PlayerService) { }
 
   ngOnInit(): void {
+    this.service.checkHealth().subscribe(data => console.log(data), error => console.log(error));
+
     this.toStepOne = true;
     this.toStepTwo = false;
     this.toStepThree = false;

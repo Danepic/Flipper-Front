@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   logInUrl: 'https://flipper-login.herokuapp.com/api',
+  vanillaLogInUrl: 'https://flipper-login.herokuapp.com',
   firebase: {
     apiKey: 'AIzaSyCxxXQy6wivXJQO4pcFW0Wi6pIXV_bqyhU',
     authDomain: 'flipper-front.firebaseapp.com',
