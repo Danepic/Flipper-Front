@@ -1,0 +1,58 @@
+.background {
+    background-image: url("../../assets/imgs/bug-wallpaper.jpg");
+    background-size: 100% 100%;
+}
+
+.logo {
+    background-image: url("../../assets/imgs/flipper.png");
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    width: 389px;
+    height: 167px;
+}
+
+//Materialize Override
+select {
+    border-color: #9e9e9e;
+    background-color: rgba(0,0,0,1);
+    color: #9e9e9e;
+}
+
+.white-text {
+    color: white;
+}
+
+.disabled-text {
+    color: #9e9e9e;
+}
+
+.danepic {
+    background-image: url("../../assets/imgs/danepic.png");
+    background-repeat: no-repeat;
+    background-size: 30% 115%;
+    width: 400px;
+    height: 70px;
+}
+
+.white-text {
+    color: white;
+}
+
+.disabled-text {
+    color: #9e9e9e;
+}
+
+//Materialize Override
+[type="radio"]:disabled + span{
+    color: #9e9e9e;
+}
+
+[type="radio"]:disabled:not(:checked) + span:before{
+    border-color: #9e9e9e;
+}
+
+select {
+    border-color: #9e9e9e;
+    background-color: rgba(0,0,0,1);
+    color: #9e9e9e;
+}

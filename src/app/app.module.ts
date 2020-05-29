@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterializeModule } from 'angular2-materialize';
 
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { BugLoginComponent } from './bug/bug-login/bug-login.component';
+import { BugFormComponent } from './bug/bug-form/bug-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
     PlayerRegistrationComponent,
     PlayerFooterComponent,
     PlayerHeaderComponent,
-    PlayerEmailComponent
+    PlayerEmailComponent,
+    BugLoginComponent,
+    BugFormComponent
   ],
   imports: [
     BrowserModule,

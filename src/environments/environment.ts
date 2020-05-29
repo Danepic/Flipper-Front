@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  coreUrl: 'https://flipper-core.herokuapp.com/api',
+  vanillaCoreUrl: 'https://flipper-core.herokuapp.com',
   logInUrl: 'https://flipper-login.herokuapp.com/api',
   vanillaLogInUrl: 'https://flipper-login.herokuapp.com',
   firebase: {

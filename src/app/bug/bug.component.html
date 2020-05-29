@@ -1,1 +1,102 @@
-<p>bug works!</p>
+<div class="background">
+
+    <div class="row">
+
+        <div class="logo col s4 left-align"></div>
+
+        <div class="col s4 center-align"></div>
+
+        <div class="col s4 right-align">
+
+            <label class="col s4">Language</label>
+            <select class="col s8 browser-default">
+                <option value="" disabled selected>English</option>
+            </select>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <h1 class="col s12 center-align disabled-text">
+            Report a bug or give us suggestions to improve your experience!
+        </h1>
+    </div>
+
+    <form [formGroup]="formGroup" (ngSubmit)="send()">
+        <div class="row">
+            <div class="col s12">
+                <div class="col s4"></div>
+
+                <div class="col s4 white-text">
+                    <label class="col s4">Game</label>
+                    <select #gameInput formControlName="game" class="col s8 browser-default" required>
+                        <option value="game">NBNA</option>
+                    </select>
+                </div>
+
+                <div class="col s4"></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <div class="col s4"></div>
+
+                <div class="col s4 white-text">
+                    <label class="col s4">Platform</label>
+                    <select #platformInput formControlName="platform" class="col s8 browser-default" required>
+                        <option value="platform">DESKTOP</option>
+                    </select>
+                </div>
+
+                <div class="col s4"></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <div class="col s4"></div>
+
+                <div class="input-field col s4 center-align white-text">
+                    <input #emailInput formControlName="email" id="email" type="email" class="invalid validate white-text">
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="col s4"></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <div class="col s4"></div>
+
+                <div class="input-field col s4 center-align white-text">
+                    <textarea #commentsInput formControlName="comments" id="comments" class="materialize-textarea"></textarea>
+                    <label for="commentsInput">Comments</label>
+                </div>
+
+                <div class="col s4"></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s5"></div>
+            <button class="col s2 waves-effect waves-light btn center-align">Send</button>
+            <div class="col s5"></div>
+        </div>
+    </form>
+
+    <div class="row">
+        <div class="danepic col s4"></div>
+        <div class="col s4 center-align disabled-text">
+            © 2020 Danepic Games.
+        </div>
+        <div class="col s4"></div>
+    </div>
+
+</div>

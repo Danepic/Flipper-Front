@@ -16,6 +16,8 @@ export class PlayerService {
 
   vanillaLogInUrl = environment.vanillaLogInUrl;
 
+  vanillaCoreUrl = environment.vanillaCoreUrl;
+
   result: any;
 
   constructor(private http: HttpClient) { }
@@ -24,8 +26,12 @@ export class PlayerService {
     return this.http.post<Player>(this.logInUrl + "/v1/player", player);
   }
 
-  checkHealth(){
+  checkLogInHealth(){
     return this.http.get(this.vanillaLogInUrl);
+  }
+
+  checkCoreHealth(){
+    return this.http.get(this.vanillaCoreUrl);
   }
 
 }

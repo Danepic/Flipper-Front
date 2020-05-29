@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PlayerService } from './error-handle.service';
+import { ErrorHandleService } from './error-handle.service';
 
-describe('PlayerService', () => {
-  let service: PlayerService;
+describe('ErrorHandleService', () => {
+  let service: ErrorHandleService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PlayerService);
+    service = TestBed.inject(ErrorHandleService);
   });
 
   it('should be created', () => {

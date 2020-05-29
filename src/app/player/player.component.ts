@@ -23,7 +23,8 @@ export class PlayerComponent implements OnInit {
   constructor(private service: PlayerService) { }
 
   ngOnInit(): void {
-    this.service.checkHealth().subscribe(data => console.log(data), error => console.log(error));
+    this.service.checkLogInHealth().subscribe(data => console.log(data), error => console.log(error));
+    this.service.checkCoreHealth().subscribe(data => console.log(data), error => console.log(error));
 
     this.toStepOne = true;
     this.toStepTwo = false;
