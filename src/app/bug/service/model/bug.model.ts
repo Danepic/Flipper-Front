@@ -1,4 +1,4 @@
-export class Player {
+export class Bug {
     comments: string;
     gameID: string;
     platform: string;

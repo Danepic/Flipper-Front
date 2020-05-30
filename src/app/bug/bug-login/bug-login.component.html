@@ -1,1 +1,43 @@
-<p>bug-login works!</p>
+<div class="row">
+    <h1 class="col s12 center-align disabled-text">
+        To continue, you need to be logged in.
+    </h1>
+</div>
+
+<form [formGroup]="formGroup" (ngSubmit)="send()">
+    <div class="row">
+        <div class="col s12">
+            <div class="col s4"></div>
+
+            <div class="input-field col s4 center-align white-text">
+                <input #nameInput formControlName="name" id="Name" type="text" class="invalid validate white-text"
+                    required>
+                <label for="Name">Name</label>
+            </div>
+
+            <div class="col s4"></div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="col s4"></div>
+
+            <div class="input-field col s4 center-align white-text">
+                <input #nameInput formControlName="name" id="Name" type="text" class="invalid validate white-text"
+                    required>
+                <label for="Name">Name</label>
+            </div>
+
+            <div class="col s4"></div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s5"></div>
+        <button class="col s2 waves-effect waves-light btn center-align">Login</button>
+        <div class="col s5"></div>
+    </div>
+</form>
