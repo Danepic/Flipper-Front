@@ -16,7 +16,7 @@ export class BugFormComponent implements OnInit {
   commentsInput: ElementRef;
 
   @ViewChild('gameInput')
-  gameIDInput: ElementRef;
+  gameInput: ElementRef;
 
   @ViewChild('platformInput')
   platformInput: ElementRef;
@@ -27,10 +27,19 @@ export class BugFormComponent implements OnInit {
 
   formGroup: FormGroup;
 
+  platformSelect: any;
+  gameSelect: any;
+
   constructor(private formBuilder: FormBuilder, private bugComponent: BugComponent,
     private service: BugService, private errorHandleService: ErrorHandleService) { }
 
   ngOnInit(): void {
+    this.service.getPlatforms().subscribe(data => this.platformSelect = data,
+      error => this.errorHandleService.throwToastException(error.error.message));
+
+    this.service.getGames().subscribe(data => this.gameSelect = data,
+      error => this.errorHandleService.throwToastException(error.error.message));
+
     this.initForm()
   }
 
@@ -48,7 +57,7 @@ export class BugFormComponent implements OnInit {
     this.platform = this.formGroup.value.platform;
 
     if (this.commentsInput.nativeElement.className.includes("invalid")
-      || this.gameIDInput.nativeElement.className.includes("invalid")
+      || this.gameInput.nativeElement.className.includes("invalid")
       || this.platformInput.nativeElement.className.includes("invalid")) {
       toast("Comments is required!", 2000);
       toast("Game is required!", 2000);
