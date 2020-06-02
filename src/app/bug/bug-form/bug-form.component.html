@@ -12,7 +12,7 @@
             <div class="col s4 white-text">
                 <label class="col s4">Game:</label>
                 <select #gameInput formControlName="gameID" class="col s8 browser-default" required>
-                    <option *ngFor="let game of gameSelect" [value]="game" value="gameID">{{ game.name }}</option>
+                    <option *ngFor="let game of gameSelect" [value]="game.id" value="gameID">{{ game.name }}</option>
                 </select>
             </div>
 
@@ -42,10 +42,13 @@
         <div class="col s12">
             <div class="col s4"></div>
 
-            <div class="input-field col s4 center-align white-text">
+            <div class="input-field col s4 center-align white-text tooltipped" materialize="tooltip"
+                data-html="true" data-position="right" data-tooltip="Describe your suggestion or bugs.</br>
+                                                                    You can reference other links for a </br>
+                                                                    better description and for our understanding">
                 <textarea #commentsInput formControlName="comments" id="comments" class="materialize-textarea"
                     minlength="0" maxlength="500"></textarea>
-                <label for="commentsInput">Comments</label>
+                <label for="commentsInput" class="tooltipped">Comments</label>
             </div>
 
             <div class="col s4"></div>

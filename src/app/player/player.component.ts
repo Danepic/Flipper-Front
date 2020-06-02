@@ -1,6 +1,5 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { Player } from './service/model/player.model';
-import { PlayerService } from './service/player.service';
 import { CheckHealthService } from '../check-health/service/check-health.service';
 
 @Component({

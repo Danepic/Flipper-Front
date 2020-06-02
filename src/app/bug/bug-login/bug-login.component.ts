@@ -55,7 +55,9 @@ export class BugLoginComponent implements OnInit {
       this.service.login(this.loginRequest).subscribe(data => {
         this.loginResponse = data;
         this.bugComponent.bug.playerID = this.loginResponse.localId;
-        console.log(this.loginResponse.localId);
+
+        this.service.save(this.bugComponent.bug).subscribe(bugResult => {},
+          error => this.errorHandleService.throwToastException(error.error.message));
         
         this.bugComponent.enableLogin = false;
         this.bugComponent.enableThankyou = true;
