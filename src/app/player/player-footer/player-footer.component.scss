@@ -6,10 +6,37 @@
     color: #9e9e9e;
 }
 
-.danepic {
-    background-image: url("../../../assets/imgs/danepic.png");
-    background-repeat: no-repeat;
-    background-size: 30% 115%;
-    width: 400px;
-    height: 70px;
+@media screen and (max-width: 2560px) {
+    .large-screen {
+        display: inline;
+    }
+    .small-screen {
+        display: none;
+    }
+
+    .danepic {
+        background-image: url("../../../assets/imgs/danepic.png");
+        background-repeat: no-repeat;
+        background-size: 30% 115%;
+        width: 400px;
+        height: 70px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .large-screen {
+        display: none;
+    }
+    .small-screen {
+        display: inline;
+    }
+
+    .danepic {
+        background-image: url("../../../assets/imgs/danepic.png");
+        background-repeat: no-repeat;
+        background-size: 30% 100%;
+        width: 400px;
+        height: 70px;
+        background-position: center;
+    }
 }
