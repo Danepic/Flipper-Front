@@ -1,6 +1,6 @@
 # Flipper Front
 
-API de controle geral.
+Client da aplicação Flipper.
 
 ### Stack
  - Typescript
