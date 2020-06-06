@@ -1,6 +1,15 @@
-# FlipperFront
+# Flipper Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+API de controle geral.
+
+### Stack
+ - Typescript
+ - Angular 9
+ - HTML
+ - CSS
+ - Materialize
+ - Angular2 Materialize
+ - Firebase
 
 ## Development server
 
@@ -14,14 +23,38 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+#### Build Tool:
+Maven v3.6.1
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Database:
+Firebase
 
-## Running end-to-end tests
+#### External Services:
+ - NBNA-API (Heroku)
+ - Flipper Login (Heroku)
+ - Flipper Cash (Heroku)
+ 
+#### MicroServices
+ - ##### Game Service
+Para adicionar nesse serviço, você precisa ter uma conta registrada como administrador. Para criar essas contas 
+de administrador voce precisa ter login na API LoginIn e ter seu cadastro na Firebase Rule do projeto Core.
+ 
+#### Environment:
+N/A
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### CI:
+N/A
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### Dependencies Versions:
+```sh
+        <java.version>11</java.version>
+        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <commons-validator.version>1.6</commons-validator.version>
+        <mapstruct.version>1.3.1.Final</mapstruct.version>
+        <jackson.version>2.10.0</jackson.version>
+        <swagger.version>2.9.2</swagger.version>
+        <firebase.version>3.0.3</firebase.version>
+        <alternate-feign.version>10.7.0</alternate-feign.version>
+        <gson.version>2.8.6</gson.version>
+        <version>2.2.4.RELEASE</version>
+```
