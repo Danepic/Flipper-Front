@@ -19,6 +19,7 @@ import { BugLoginComponent } from './bug/bug-login/bug-login.component';
 import { BugFormComponent } from './bug/bug-form/bug-form.component';
 import { DownloadComponent } from './download/download.component';
 import { BugThankyouComponent } from './bug/bug-thankyou/bug-thankyou.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BugThankyouComponent } from './bug/bug-thankyou/bug-thankyou.component'
     BugLoginComponent,
     BugFormComponent,
     DownloadComponent,
-    BugThankyouComponent
+    BugThankyouComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
