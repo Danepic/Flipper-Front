@@ -1,1 +1,92 @@
-<p>game works!</p>
+<div class="background">
+
+    <!--HEADER-->
+    <div class="z-depth-5">
+        <div class="row large-screen">
+
+            <div class="logo col s4 left-align"></div>
+
+            <div class="col s4 center-align"></div>
+
+            <div class="col s4 right-align">
+
+                <label class="col s4">Language</label>
+                <select class="col s8 browser-default">
+                    <option value="" disabled selected>English</option>
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="row small-screen">
+            <div class="logo col s12 center-align"></div>
+
+            <div class="col s12 center-align">
+
+                <label class="col s3">Language</label>
+                <select class="col s9 browser-default">
+                    <option value="" disabled selected>English</option>
+                </select>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--MAIN-->
+    <div class="z-depth-1">
+
+        <div class="row" *ngFor="let game of gameList">
+            <div class="col s2"></div>
+
+            <div class="grey lighten-2 z-depth-5 col s8" >
+    
+                <div class="main-content">
+                    <div class="col s3">
+                        <div class="grey lighten-5 game-img">
+                            <img src="{{ game.thumbUrl }}" width="100%" height="100%">
+                            <div class="center-align">{{ game.name }}</div>
+                        </div>
+                    </div>
+                    <div class="col s7">
+                        <h6>Description</h6>
+                        <div>{{ game.description }}</div>
+                    </div>
+                    <div class="col s2">
+                        <h6>Download</h6>
+                        <div *ngFor="let downloadReference of game.downloadReference; index as i;">
+                            <a target="_blank" rel="noopener noreferrer" href="{{ downloadReference.link }}">{{ downloadReference.provider }}</a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="col s2"></div>
+        </div>
+        
+    </div>
+
+    <!--FOOTER-->
+    <div class="z-depth-1">
+        <div class="large-screen">
+            <div class="row">
+                <div class="danepic col s4"></div>
+                <div class="col s4 center-align disabled-text">
+                    © 2020 Danepic Games.
+                </div>
+                <div class="col s4"></div>
+            </div>
+        </div>
+
+        <div class="small-screen">
+            <div class="row">
+                <div class="danepic col s12 center-align"></div>
+                <div class="col s12 center-align disabled-text">
+                    © 2020 Danepic Games.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

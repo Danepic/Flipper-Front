@@ -17,7 +17,6 @@ import { MaterializeModule } from 'angular2-materialize';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { BugLoginComponent } from './bug/bug-login/bug-login.component';
 import { BugFormComponent } from './bug/bug-form/bug-form.component';
-import { DownloadComponent } from './download/download.component';
 import { BugThankyouComponent } from './bug/bug-thankyou/bug-thankyou.component';
 import { GameComponent } from './game/game.component';
 
@@ -33,7 +32,6 @@ import { GameComponent } from './game/game.component';
     PlayerEmailComponent,
     BugLoginComponent,
     BugFormComponent,
-    DownloadComponent,
     BugThankyouComponent,
     GameComponent
   ],
