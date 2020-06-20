@@ -12,6 +12,8 @@ import { toast } from 'angular2-materialize';
 })
 export class BugFormComponent implements OnInit {
 
+  platformOption: string;
+
   @ViewChild('commentsInput')
   commentsInput: ElementRef;
 
@@ -27,6 +29,7 @@ export class BugFormComponent implements OnInit {
 
   formGroup: FormGroup;
 
+  selectedGame: any;
   platformSelect: any;
   gameSelect: any;
 
@@ -34,9 +37,6 @@ export class BugFormComponent implements OnInit {
     private service: BugService, private errorHandleService: ErrorHandleService) { }
 
   ngOnInit(): void {
-    this.service.getPlatforms().subscribe(data => this.platformSelect = data,
-      error => this.errorHandleService.throwToastException(error.error.message));
-
     this.service.getGames().subscribe(data => this.gameSelect = data,
       error => this.errorHandleService.throwToastException(error.error.message));
 
@@ -49,6 +49,14 @@ export class BugFormComponent implements OnInit {
       gameID: ['', Validators.required],
       platform: ['', Validators.required],
     });
+  }
+
+  getPlatforms(){
+    this.service.getGame(this.formGroup.value.gameID).subscribe(data => {
+      this.selectedGame = data
+      this.platformSelect = this.selectedGame.downloadReference;
+    },
+    error => this.errorHandleService.throwToastException(error.error.message));
   }
 
   send() {

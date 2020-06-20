@@ -24,6 +24,10 @@ export class BugService {
     return this.http.get(this.coreUrl + "/v1/game");
   }
 
+  getGame(gameID: string) {
+    return this.http.get(this.coreUrl + "/v1/game/" + gameID);
+  }
+
   login(login: Login) {
     return this.http.post(this.logInUrl + "/v1/authentication/login", login);
   }
