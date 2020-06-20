@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, ViewChild, ElementRef } from '@angular/core';
 import { CheckHealthService } from '../check-health/service/check-health.service';
 import { GameService } from './service/game.service';
 import { ErrorHandleService } from '../error-handle/service/error-handle.service';
@@ -13,6 +13,9 @@ import { ErrorHandleService } from '../error-handle/service/error-handle.service
 })
 export class GameComponent implements OnInit {
 
+  @ViewChild('loadingElement')
+  loadingElement: ElementRef;
+
   gameList: any;
 
   constructor(private checkHealthService: CheckHealthService, private service: GameService,
@@ -22,8 +25,12 @@ export class GameComponent implements OnInit {
     this.checkHealthService.checkLogInHealth().subscribe(data => console.log(data), error => console.log(error));
     this.checkHealthService.checkCoreHealth().subscribe(data => console.log(data), error => console.log(error));
 
-    this.service.getGames().subscribe(data => this.gameList = data,
-      error => this.errorHandleService.throwToastException(error.error.message));
+    this.service.getGames().subscribe(data => {
+      this.gameList = data;
+      this.loadingElement.nativeElement.textContent = '';
+      this.loadingElement.nativeElement.innerText = '';
+    },
+    error => this.errorHandleService.throwToastException(error.error.message));
   }
 
 }
