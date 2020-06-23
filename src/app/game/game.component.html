@@ -60,7 +60,8 @@
                     <div class="col s2">
                         <h6>Download</h6>
                         <div *ngFor="let downloadReference of game.downloadReference; index as i;">
-                            <a target="_blank" rel="noopener noreferrer" href="{{ downloadReference.link }}">{{ downloadReference.provider }}</a>
+                            <a target="_blank" rel="noopener noreferrer" href="{{ downloadReference.link }}">{{ downloadReference.platform }} 
+                                ({{ downloadReference.provider }})</a>
                         </div>
                     </div>
                 </div>
