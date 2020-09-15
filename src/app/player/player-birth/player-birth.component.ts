@@ -55,6 +55,9 @@ export class PlayerBirthComponent implements OnInit {
       if(parseInt(this.month) < 10){
         this.month = "0" + this.month;
       }
+      if(parseInt(this.day) < 10){
+        this.day = "0" + this.day;
+      }
 
       this.playerComponent.player.birth = this.year + "-" + this.month + "-" + this.day;
       this.playerComponent.toStepTwo = false;

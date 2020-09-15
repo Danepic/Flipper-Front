@@ -83,8 +83,14 @@ export class PlayerRegistrationComponent implements OnInit {
 
         this.service.save(this.playerComponent.player)
           .subscribe(
-            data => console.log(data),
-            error => this.errorHandleService.throwToastException(error.error.message)
+            data => {
+              this.playerComponent.toStepThree = false;
+              this.playerComponent.enableThankyou = true;
+            },
+            error => {
+              console.log(error.error.message)
+              this.errorHandleService.throwToastException("Sorry, problem with server... Try again later please! ://")
+            }
           );
       }
     }

@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  coreUrl: 'https://flipper-core.herokuapp.com/api',
-  vanillaCoreUrl: 'https://flipper-core.herokuapp.com',
-  logInUrl: 'https://flipper-login.herokuapp.com/api',
-  vanillaLogInUrl: 'https://flipper-login.herokuapp.com',
+  coreUrl: 'https://core.flipper-fun.net/api',
+  vanillaCoreUrl: 'https://core.flipper-fun.net',
+  logInUrl: 'https://login.flipper-fun.net/api',
+  vanillaLogInUrl: 'https://login.flipper-fun.net',
   firebase: {
     apiKey: 'AIzaSyCxxXQy6wivXJQO4pcFW0Wi6pIXV_bqyhU',
     authDomain: 'flipper-front.firebaseapp.com',

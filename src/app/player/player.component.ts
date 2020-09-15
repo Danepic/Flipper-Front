@@ -18,6 +18,8 @@ export class PlayerComponent implements OnInit {
 
   toStepThree: boolean;
 
+  enableThankyou: boolean;
+
   player: Player;
 
   constructor(private checkHealthService: CheckHealthService) { }
@@ -29,6 +31,7 @@ export class PlayerComponent implements OnInit {
     this.toStepOne = true;
     this.toStepTwo = false;
     this.toStepThree = false;
+    this.enableThankyou = false;
     this.player = new Player;
   }
 
