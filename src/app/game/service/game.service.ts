@@ -12,6 +12,6 @@ export class GameService {
   constructor(private http: HttpClient) { }
 
   getGames() {
-    return this.http.get(this.coreUrl + "/v1/game");
+    return this.http.get(this.coreUrl + "/v1/core/game");
   }
 }

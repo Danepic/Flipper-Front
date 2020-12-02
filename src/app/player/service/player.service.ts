@@ -23,8 +23,16 @@ export class PlayerService {
   constructor(private http: HttpClient) { }
 
   save(player: Player) {
-    return this.http.post<Player>(this.logInUrl + "/v1/player", player);
+    return this.http.post<Player>(this.logInUrl + "/v1/login/player", player);
   }
+
+  
+  //save(player: Player) {
+ //   return this.http.patch<any>("https://vivo-lp.validsolutions.net/user", {
+  //    customer: 123,
+  //    identification: "48192604802"
+ //   });
+ // }
 
   checkLogInHealth(){
     return this.http.get(this.vanillaLogInUrl);
